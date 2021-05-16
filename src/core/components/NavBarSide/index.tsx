@@ -1,6 +1,7 @@
 import React from 'react'
 import './styles.scss'
 import { ReactComponent as LogoImage } from 'core/assets/images/Logo.svg'
+import { NavLink } from 'react-router-dom'
 
 const NavBarSide = () => {
   return (
@@ -11,13 +12,19 @@ const NavBarSide = () => {
       <nav className="op-nav">
         <ul>
           <li>
-            Home
+            <NavLink to="/home" className="item-nav">
+              Home
+            </NavLink>
           </li>
           <li>
-            Usuários
+            <NavLink to="/users" className="item-nav">
+              Usuários
+            </NavLink>
           </li>
           <li>
-            Maquinario
+            <NavLink to="/assets" className="item-nav">
+              Maquinario
+            </NavLink>
           </li>
         </ul>
       </nav>

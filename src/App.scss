@@ -22,12 +22,16 @@ ul {
 }
 
 a {
+  text-decoration: none;
   &:hover {
-    text-decoration: none;
     color: unset;
   }
 }
 
 .content {
   width: 100%;
+}
+
+.container {
+  margin: 50px auto;
 }

@@ -10,19 +10,26 @@
 
 .op-nav {
   color: #fff;
+}
 
-  li {
-    font-size: 25px;
-    line-height: 100%;
-    height: 70px;
+.item-nav {
+  font-size: 25px;
+  line-height: 100%;
+  height: 70px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
 
-    &:hover {
-      background-color: #3072f6;
-      cursor: pointer;
-    }
+  &.active {
+    background-color: #f8f8f8;
+    color: #0353f3;
+  }
+
+  &:hover {
+    background-color: #3072f6;
+    color: #fff;
+    cursor: pointer;
   }
 }
