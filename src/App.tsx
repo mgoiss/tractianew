@@ -1,24 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './core/assets/styles/custom.scss';
+import './App.scss';
+import NavBarSide from 'core/components/NavBarSide';
+import NavBarUp from 'core/components/NavBarUp';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="d-flex">
+      <NavBarSide />
+      <section className="content">
+        <NavBarUp />
+        <h1>Aqui entra as Rotas</h1>
+      </section>
     </div>
   );
 }

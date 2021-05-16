@@ -1,0 +1,10 @@
+//Customizando o Bootstrap
+
+$theme-colors: (
+  "primary": #0353f3,
+);
+
+$body-bg: #f8f8f8;
+$body-color: #494c4b;
+
+@import "~bootstrap/scss/bootstrap.scss";
