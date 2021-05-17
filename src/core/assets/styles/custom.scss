@@ -8,3 +8,9 @@ $body-bg: #f8f8f8;
 $body-color: #494c4b;
 
 @import "~bootstrap/scss/bootstrap.scss";
+
+.btn {
+  font-weight: 700;
+  height: 40px;
+  width: 150px;
+}
