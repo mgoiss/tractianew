@@ -38,8 +38,10 @@ a {
 }
 
 .container {
+  overflow: auto;
   margin: 50px auto;
   max-width: 1150px;
+  max-height: 80vh;
 }
 
 .title {
@@ -50,13 +52,12 @@ a {
 }
 
 .itens-grid {
-  overflow: auto;
   max-height: 250px;
 
   display: grid;
   grid-template-columns: repeat(auto-fill, 350px);
   grid-gap: 33px 20px;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .card-list-base {

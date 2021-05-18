@@ -4,7 +4,7 @@ import './styles.scss';
 
 const Home = () => {
   return (
-    <div>
+    <section>
       <section className="graphic-container">
         <div>
           <h1>Status</h1>
@@ -32,9 +32,93 @@ const Home = () => {
           <Link to={`home/${3}`}>
             <CardList name="Unidade Cipó" />
           </Link>
+          <Link to={`home/${1}`}>
+            <CardList name="Unidade Pombal" />
+          </Link>
+          <Link to={`home/${2}`}>
+            <CardList name="Unidade Cicero Dantas" />
+          </Link>
+          <Link to={`home/${3}`}>
+            <CardList name="Unidade Cipó" />
+          </Link>
+          <Link to={`home/${1}`}>
+            <CardList name="Unidade Pombal" />
+          </Link>
+          <Link to={`home/${2}`}>
+            <CardList name="Unidade Cicero Dantas" />
+          </Link>
+          <Link to={`home/${3}`}>
+            <CardList name="Unidade Cipó" />
+          </Link>
+          <Link to={`home/${1}`}>
+            <CardList name="Unidade Pombal" />
+          </Link>
+          <Link to={`home/${2}`}>
+            <CardList name="Unidade Cicero Dantas" />
+          </Link>
+          <Link to={`home/${3}`}>
+            <CardList name="Unidade Cipó" />
+          </Link>
+          <Link to={`home/${1}`}>
+            <CardList name="Unidade Pombal" />
+          </Link>
+          <Link to={`home/${2}`}>
+            <CardList name="Unidade Cicero Dantas" />
+          </Link>
+          <Link to={`home/${3}`}>
+            <CardList name="Unidade Cipó" />
+          </Link>
+          <Link to={`home/${2}`}>
+            <CardList name="Unidade Cicero Dantas" />
+          </Link>
+          <Link to={`home/${3}`}>
+            <CardList name="Unidade Cipó" />
+          </Link>
+          <Link to={`home/${1}`}>
+            <CardList name="Unidade Pombal" />
+          </Link>
+          <Link to={`home/${2}`}>
+            <CardList name="Unidade Cicero Dantas" />
+          </Link>
+          <Link to={`home/${3}`}>
+            <CardList name="Unidade Cipó" />
+          </Link>
+          <Link to={`home/${1}`}>
+            <CardList name="Unidade Pombal" />
+          </Link>
+          <Link to={`home/${2}`}>
+            <CardList name="Unidade Cicero Dantas" />
+          </Link>
+          <Link to={`home/${3}`}>
+            <CardList name="Unidade Cipó" />
+          </Link>
+          <Link to={`home/${2}`}>
+            <CardList name="Unidade Cicero Dantas" />
+          </Link>
+          <Link to={`home/${3}`}>
+            <CardList name="Unidade Cipó" />
+          </Link>
+          <Link to={`home/${1}`}>
+            <CardList name="Unidade Pombal" />
+          </Link>
+          <Link to={`home/${2}`}>
+            <CardList name="Unidade Cicero Dantas" />
+          </Link>
+          <Link to={`home/${3}`}>
+            <CardList name="Unidade Cipó" />
+          </Link>
+          <Link to={`home/${1}`}>
+            <CardList name="Unidade Pombal" />
+          </Link>
+          <Link to={`home/${2}`}>
+            <CardList name="Unidade Cicero Dantas" />
+          </Link>
+          <Link to={`home/${3}`}>
+            <CardList name="Unidade Cipó" />
+          </Link>
         </div>
       </section>
-    </div>
+    </section>
   );
 }
 
