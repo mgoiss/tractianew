@@ -1,12 +1,11 @@
 import NavBarSide from 'core/components/NavBarSide';
 import NavBarUp from 'core/components/NavBarUp';
-import { useHeaderUp } from 'core/components/NavBarUp/HeaderUpContext';
 import history from 'core/utils/history';
 import Assets from 'pages/Assets';
+import AssetsDetails from 'pages/Assets/AssetsDetails';
 import Home from 'pages/Home';
 import Units from 'pages/Home/Units';
 import User from 'pages/User';
-import { useEffect } from 'react';
 import { Redirect, Route, Router, Switch } from 'react-router-dom';
 
 const Routes = () => {
@@ -32,7 +31,7 @@ const Routes = () => {
                 <Assets />
               </Route>
               <Route path="/assets/:assetsId">
-                <h1>assetsId</h1>
+                <AssetsDetails />
               </Route>
             </Switch>
           </div>
