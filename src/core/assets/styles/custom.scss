@@ -2,6 +2,7 @@
 
 $theme-colors: (
   "primary": #0353f3,
+  "secondary": #9e9e9e,
 );
 
 $body-bg: #f8f8f8;
@@ -12,5 +13,10 @@ $body-color: #494c4b;
 .btn {
   font-weight: 700;
   height: 40px;
-  width: 150px;
+  min-width: 150px;
+  color: #fff;
+
+  &:hover {
+    color: #f8f8f8;
+  }
 }
