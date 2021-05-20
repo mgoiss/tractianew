@@ -121,10 +121,6 @@ a {
   }
 
   .input-base {
-    margin-bottom: 25px;
-  }
-
-  input:first-of-type {
-    margin-right: 40px;
+    max-width: 320px;
   }
 }

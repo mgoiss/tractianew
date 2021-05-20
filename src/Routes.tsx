@@ -5,7 +5,7 @@ import Assets from 'pages/Assets';
 import AssetsDetails from 'pages/Assets/AssetsDetails';
 import Home from 'pages/Home';
 import Units from 'pages/Home/Units';
-import User from 'pages/User';
+import UserScreen from 'pages/User';
 import { Redirect, Route, Router, Switch } from 'react-router-dom';
 
 const Routes = () => {
@@ -25,7 +25,7 @@ const Routes = () => {
                 <Units />
               </Route>
               <Route path="/users" >
-                <User />
+                <UserScreen />
               </Route>
               <Route path="/assets" exact>
                 <Assets />

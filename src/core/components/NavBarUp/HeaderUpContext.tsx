@@ -2,7 +2,7 @@ import { createContext, ReactNode, useContext, useState } from 'react'
 
 //Tipagem funções
 type HeaderUpContextData = {
-  setName: (headerUp: string) => void;
+  setName: (headerUp?: string) => void;
   headerUp: string;
   nameCompany: () => void;
 }
@@ -16,8 +16,8 @@ type HeaderUpContextProvideProps = {
 export function HeaderContextProvide({ children }: HeaderUpContextProvideProps) {
   const [headerUp, setHeaderUp] = useState('Empresa Teste');
 
-  function setName(headerUp: string) {
-    setHeaderUp(headerUp);
+  function setName(headerUp?: string) {
+    setHeaderUp(headerUp || "...");
   }
 
   //Criar um função para pegar o nome da empresa

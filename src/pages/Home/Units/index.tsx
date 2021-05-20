@@ -1,16 +1,37 @@
 import CardListAssets from 'core/components/CardListAssets';
+import CardListAssetsLoader from 'core/components/CardListAssets/Loader/CardListAssetsLoader';
 import ModalBase from 'core/components/ModalBase';
 import { useHeaderUp } from 'core/components/NavBarUp/HeaderUpContext';
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Unit } from 'core/types/unit';
+import { makeResquet } from 'core/utils/request';
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import '../styles.scss';
+
+type ParamsType = {
+  unitsId: string;
+}
 
 const Units = () => {
   const { setName } = useHeaderUp();
+  const [unitResponse, setUnitResponse] = useState<Unit>();
+  const [isLoader, setIsLoader] = useState(false);
+  const { unitsId } = useParams<ParamsType>();
 
   useEffect(() => {
-    setName("Unidade");
-  })
+    setIsLoader(true);
+    makeResquet({ url: `/units/${unitsId}` })
+      .then(response => {
+        setUnitResponse(response.data);
+      })
+      .finally(() => {
+        setIsLoader(false);
+      })
+  }, [unitsId])
+
+  useEffect(() => {
+    setName(unitResponse?.name);
+  }, [unitResponse, setName])
 
   return (
     <section>
@@ -48,28 +69,16 @@ const Units = () => {
           </ModalBase>
         </div>
         <div className="itens-grid">
-          <Link to={`/assets/${1}`}>
-            <CardListAssets
-              name="Motor H13D-1"
-              model="Motor"
-              img="https://tractian-img.s3.amazonaws.com/6d5028682016cb43d02b857d4f1384ae.jpeg"
-            />
-          </Link>
-          <CardListAssets
-            name="Motor H13D-1"
-            model="Motor"
-            img="https://tractian-img.s3.amazonaws.com/6d5028682016cb43d02b857d4f1384ae.jpeg"
-          />
-          <CardListAssets
-            name="Motor H13D-1"
-            model="Motor"
-            img="https://tractian-img.s3.amazonaws.com/6d5028682016cb43d02b857d4f1384ae.jpeg"
-          />
-          <CardListAssets
-            name="Motor H13D-1"
-            model="Motor"
-            img="https://tractian-img.s3.amazonaws.com/6d5028682016cb43d02b857d4f1384ae.jpeg"
-          />
+          {isLoader ? <CardListAssetsLoader /> : (
+            <Link to={`/assets/${1}`}>
+              <CardListAssets
+                name="Motor H13D-1"
+                model="Motor"
+                img="https://tractian-img.s3.amazonaws.com/6d5028682016cb43d02b857d4f1384ae.jpeg"
+              />
+            </Link>
+          )}
+
         </div>
       </section>
     </section>

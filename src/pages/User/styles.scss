@@ -1,3 +1,9 @@
 .itens-grid {
   max-height: 635px;
 }
+
+.form-user {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
