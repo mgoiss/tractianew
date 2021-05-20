@@ -1,8 +1,13 @@
+import { useEffect } from 'react';
 import { useHeaderUp } from './HeaderUpContext';
 import './styles.scss'
 
 const NavBarUp = () => {
-  const { headerUp } = useHeaderUp();
+  const { headerUp, NameCompany } = useHeaderUp();
+
+  useEffect(() => {
+    NameCompany();
+  }, [])
 
   return (
     <nav className="up-nav">

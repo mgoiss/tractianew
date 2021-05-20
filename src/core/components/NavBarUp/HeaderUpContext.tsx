@@ -1,10 +1,12 @@
+import { Companie } from 'core/types/companie';
+import { makeResquet } from 'core/utils/request';
 import { createContext, ReactNode, useContext, useState } from 'react'
 
 //Tipagem funções
 type HeaderUpContextData = {
   setName: (headerUp?: string) => void;
   headerUp: string;
-  nameCompany: () => void;
+  NameCompany: () => void;
 }
 
 export const HeaderUpContext = createContext({} as HeaderUpContextData);
@@ -14,15 +16,24 @@ type HeaderUpContextProvideProps = {
 }
 
 export function HeaderContextProvide({ children }: HeaderUpContextProvideProps) {
-  const [headerUp, setHeaderUp] = useState('Empresa Teste');
+  const [headerUp, setHeaderUp] = useState('...');
 
   function setName(headerUp?: string) {
     setHeaderUp(headerUp || "...");
   }
 
   //Criar um função para pegar o nome da empresa
-  function nameCompany() {
-    setHeaderUp('Empresa Teste');
+  function NameCompany() {
+
+    var companyResponse: Companie;
+    makeResquet({ url: '/companies/1' })
+      .then(respose => companyResponse = respose.data)
+      .finally(() => {
+        if (companyResponse) {
+          setName(companyResponse.name)
+        }
+      });
+
   }
 
   return (
@@ -30,7 +41,7 @@ export function HeaderContextProvide({ children }: HeaderUpContextProvideProps) 
       value={{
         setName,
         headerUp,
-        nameCompany
+        NameCompany
       }}
     >
       {children}

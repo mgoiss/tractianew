@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 import { useHeaderUp } from '../NavBarUp/HeaderUpContext'
 
 const NavBarSide = () => {
-  const { nameCompany } = useHeaderUp();
+  const { NameCompany } = useHeaderUp();
   return (
     <div className="bg-primary main-nav">
       <div className="img-nav">
@@ -14,17 +14,17 @@ const NavBarSide = () => {
       <nav className="op-nav">
         <ul>
           <li>
-            <NavLink to="/home" className="item-nav" onClick={() => nameCompany()}>
+            <NavLink to="/home" className="item-nav" onClick={() => NameCompany()}>
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/users" className="item-nav" onClick={() => nameCompany()}>
+            <NavLink to="/users" className="item-nav" onClick={() => NameCompany()}>
               Usuários
             </NavLink>
           </li>
           <li>
-            <NavLink to="/assets" className="item-nav" onClick={() => nameCompany()}>
+            <NavLink to="/assets" className="item-nav" onClick={() => NameCompany()}>
               Maquinario
             </NavLink>
           </li>
