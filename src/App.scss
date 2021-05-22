@@ -124,3 +124,9 @@ a {
     max-width: 320px;
   }
 }
+
+.form-modal {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}

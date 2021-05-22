@@ -1,7 +1,9 @@
 import CardListAssets from 'core/components/CardListAssets';
 import CardListAssetsLoader from 'core/components/CardListAssets/Loader/CardListAssetsLoader';
+import ModalAssets from 'core/components/ModalAssets';
 import ModalBase from 'core/components/ModalBase';
 import { useHeaderUp } from 'core/components/NavBarUp/HeaderUpContext';
+import { Assets } from 'core/types/Assets';
 import { Unit } from 'core/types/unit';
 import { makeResquet } from 'core/utils/request';
 import { useEffect, useState } from 'react';
@@ -15,6 +17,7 @@ type ParamsType = {
 const Units = () => {
   const { setName } = useHeaderUp();
   const [unitResponse, setUnitResponse] = useState<Unit>();
+  const [assetsResponse, setAssetsResponse] = useState<Assets[]>()
   const [isLoader, setIsLoader] = useState(false);
   const { unitsId } = useParams<ParamsType>();
 
@@ -24,9 +27,18 @@ const Units = () => {
       .then(response => {
         setUnitResponse(response.data);
       })
+
+    const params = {
+      unitId: unitsId
+    }
+
+    makeResquet({ url: `/assets`, params })
+      .then(response => {
+        setAssetsResponse(response.data);
+      })
       .finally(() => {
         setIsLoader(false);
-      })
+      });
   }, [unitsId])
 
   useEffect(() => {
@@ -51,32 +63,20 @@ const Units = () => {
         <div className="title">
           <h1>Maquinas</h1>
           <ModalBase title="Nova Maquina">
-            <div className="line-info-modal">
-              <input name="name" type="text" className="form-control input-base" placeholder="Nome" />
-              <input name="modelo" type="text" className="form-control input-base" placeholder="Modelo" />
-            </div>
-            <div className="line-info-modal">
-              <input name="unidade" type="text" className="form-control input-base" placeholder="Unidade" />
-              <input name="sensor" type="text" className="form-control input-base" placeholder="Sensor" />
-            </div>
-            <div className="line-info-modal">
-              <div>
-                <button type="button" className="btn btn-secondary mb-2">Adicionar Imagem</button>
-                <h4>As imagens devem ser  JPG ou PNG<br />e não devem ultrapassar <strong>5 mb.</strong></h4>
-              </div>
-              <button type="button" className="btn btn-primary align-self-end">Salvar</button>
-            </div>
+            <ModalAssets />
           </ModalBase>
         </div>
         <div className="itens-grid">
           {isLoader ? <CardListAssetsLoader /> : (
-            <Link to={`/assets/${1}`}>
-              <CardListAssets
-                name="Motor H13D-1"
-                model="Motor"
-                img="https://tractian-img.s3.amazonaws.com/6d5028682016cb43d02b857d4f1384ae.jpeg"
-              />
-            </Link>
+            assetsResponse?.map(assets => (
+              <Link to={`/assets/${assets.id}`} key={assets.id}>
+                <CardListAssets
+                  name={assets.name}
+                  model={assets.model}
+                  img={assets.image}
+                />
+              </Link>
+            ))
           )}
 
         </div>

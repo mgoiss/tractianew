@@ -1,7 +1,7 @@
 import NavBarSide from 'core/components/NavBarSide';
 import NavBarUp from 'core/components/NavBarUp';
 import history from 'core/utils/history';
-import Assets from 'pages/Assets';
+import AssetsScreen from 'pages/Assets';
 import AssetsDetails from 'pages/Assets/AssetsDetails';
 import Home from 'pages/Home';
 import Units from 'pages/Home/Units';
@@ -28,7 +28,7 @@ const Routes = () => {
                 <UserScreen />
               </Route>
               <Route path="/assets" exact>
-                <Assets />
+                <AssetsScreen />
               </Route>
               <Route path="/assets/:assetsId">
                 <AssetsDetails />

@@ -59,7 +59,7 @@ const UserScreen = () => {
       <div className="title">
         <h1>Usuários</h1>
         <ModalBase title="Novo Usuário">
-          <form onSubmit={handleSubmit(OnSubmitModal)} className="form-user">
+          <form onSubmit={handleSubmit(OnSubmitModal)} className="form-modal">
             <div className="line-info-modal ">
               <div className="d-flex flex-column">
                 <input
